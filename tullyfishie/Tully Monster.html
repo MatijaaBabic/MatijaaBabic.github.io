@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
 <head>
-	<title></title>
+	<link href="tullystyles.css" rel="stylesheet" type="text/css">
+	<title>Tully The Fish</title>
 	<style>
 		body {font-family: arial, "sans-serif";}
 	</style>
 </head>
 <body>
 
-<h1>The Tully Monster</h1>
+<div id = "Main"><h1>The Tully Monster</h1></div>
 
 <p>The Tully Monster is a fossilised creature believed to have lived 300 million years ago. It was discovered by and named after Francis Tully in 1958.</p>
 
-<div id="monster"><img src="TullyMonster.png"></div>
+<div id="monster"><img src="TullyMonster.png", alt="The fish of Tully"></div>
 
 <form name="question">
 <p id="box">Question - How long was the Tully Monster?</p> 
@@ -20,9 +21,14 @@
 <p>Answer: <input type="text" name="answer"></p>
 <p id="box2">Click below to find out where it lived.</p>
 <button type="button" onclick="document.getElementById('box2').innerHTML = 'It lived in the tropical estuaries of Illinois, USA.'">Click here</button>
+<p><a href="https://www.fieldmuseum.org/blog/science-fmnh-ep-16-illinois-300-million-years-ago">For more information on it's location press here.</a></p>
 <p>If the picture is too scary you can hide it by pressing the button below.</p>
 <button type="button" onclick="showHide()">Hide picture</button>
 </form>
+<div id="descp"><p>Tullimonstrum, colloquially known as the Tully monster or sometimes Tully's monster, is an extinct genus of soft-bodied bilaterian animal that lived in shallow tropical coastal waters of muddy estuaries during the Pennsylvanian geological period, about 300 million years ago. A single species, T. gregarium, is known. Examples of Tullimonstrum have been found only in the Essex biota, a smaller section of the Mazon Creek fossil beds of Illinois, United States. Its classification has been the subject of controversy, and interpretations of the fossil have likened it to molluscs, arthropods, conodonts, worms, tunicates, and vertebrates. This creature had a mostly cigar shaped body, with a triangular tail fin, two long stalked eyes, and a proboscis tipped with a mouth-like appendage. Based on the fossils, it seems this creature was a nektonic carnivore that hunted in the ocean’s water column. When Tullimonstrum was alive, Illinois was a mixture of ecosystems like muddy estuaries, marine environments, and rivers and lakes. Fossils of other organisms like crustacean Belotelson, the cnidarian Essexella, and the elasmobranch fish Bandringa have been found alongside Tullimonstrum.</p></div>
+<div id="monster2"><img src="Tullythefish.png", alt="Tully Fish picture"></div>
+<div><img src="e.gif", alt="Funny swimming Tully"></div>
+<p>Tully monster, even though it has a scary name, isn't scary, it is just a cute little "fish" :D.</p>
 <script>
 	
 function validate() {
@@ -53,7 +59,28 @@ else
 x.style.display = 'block';
 
 }
-
 </script>
+<style>
+#descp
+{
+
+color: black;
+background-color: burlywood;
+
+}
+img
+{
+
+border: double 10px black;
+
+}
+#Main
+{
+
+border: double 10px white;
+background-color: lightpink
+
+}
+</style>
 </body>
 </html>
