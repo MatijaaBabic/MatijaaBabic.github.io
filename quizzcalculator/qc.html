@@ -1,7 +1,64 @@
 <!DOCTYPE.html>
 <html>
 <head>
+<title>Quizz Calculator</title> 
 <body>
+<form>
+First number:
+<p id="x"><input type="text", name="firstnumber"></p>
+Second number:
+<p id="y"><input type="text", name="secondnumber"></p>
+<button type="button", id="bt1" onclick="button1()">+</button>
+<p><button type="button", id="bt2" onclick="button2()">-</button></p>
+<p><button type="button", id="bt3" onclick="button3()">*</button></p>
+<p><button type="button", id="bt4" onclick="button4()">/</button></p> <!--all placeholders for now, will change once functions are written-->
+My answer:
+<p id="z"><input type="text", name="result"></p>
+Correct answer:
+<p id="box1"><input type="correctresult", name= correctresult></p> 
+<button type="button" onclick="buttonmain()">Correct answer</button> <!--placeholder for now, will change later-->
+<p>Number of wrong answers: <input type="", name="wrong"></p>
+<p>Number of correct answers: <input type="", name="correct"></p>
+<p>Percentage correct: <input type="", name="percentage"></p>
+
+</form>
+<script>
+var operator=0;
+var wrong=0;
+var correct=0;
+var numberofquestions=0;
+var firstnumber=0;
+var secondnumber=0;
+var correctresult=0;
+var result=0;
+var percentage=0;
+function myInput() {
+    	firstnumber = document.getElementById('x').value
+        secondnumber = document.getElementById('y').value
+        result = document.getElementById('z').value
+}
+function button1() {
+        correctresult = firstnumber + secondnumber;
+
+}
+function button2() {
+        correctresult = firstnumber - secondnumber;
+
+}
+function button3() {
+        correctresult = firstnumber * secondnumber;
+
+}
+function button4() {
+        correctresult = firstnumber / secondnumber;
+
+}
+function buttonmain() {
+        return = correctresult
+
+}
+
+</script>
 </body>
 </head>
 </html>
