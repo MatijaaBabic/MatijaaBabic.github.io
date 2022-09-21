@@ -3,58 +3,78 @@
 <head>
 <title>Quizz Calculator</title> 
 <body>
-<form>
+<form name ="question">
 First number:
-<p id="x"><input type="text", name="firstnumber"></p>
+<p><input type="text", id ="x" name="firstnumber"></p>
 Second number:
-<p id="y"><input type="text", name="secondnumber"></p>
-<button type="button", id="bt1" onclick="button1()">+</button>
-<p><button type="button", id="bt2" onclick="button2()">-</button></p>
-<p><button type="button", id="bt3" onclick="button3()">*</button></p>
-<p><button type="button", id="bt4" onclick="button4()">/</button></p> <!--all placeholders for now, will change once functions are written-->
-My answer:
-<p id="z"><input type="text", name="result"></p>
+<p><input type="text", id = "y" name="secondnumber"></p>
+<button type="button", onclick="add()">+</button>
+<p><button type="button", onclick="subtract()">-</button></p>
+<p><button type="button", onclick="button3()">*</button></p>
+<p><button type="button", onclick="button4()">/</button></p> <!--all placeholders for now, will change once functions are written-->
+Answer:<p><input type='text', name="answer"></p>
 Correct answer:
-<p id="box1"><input type="correctresult", name= correctresult></p> 
-<button type="button" onclick="buttonmain()">Correct answer</button> <!--placeholder for now, will change later-->
-<p>Number of wrong answers: <input type="", name="wrong"></p>
-<p>Number of correct answers: <input type="", name="correct"></p>
-<p>Percentage correct: <input type="", name="percentage"></p>
+<p id="box1"><input type="text", id="correctresult" name= correctresult></p> 
+<button type="button" onclick="validate()">Correct answer</button> <!--placeholder for now, will change later-->
+<p>Number of wrong answers: <input type= "text" , id = wrong name="wrong"></p>
+<p>Number of correct answers: <input type="text", id = correct name="correct"></p>
+<p>Percentage correct: <input type="text", id = per name="percentage"></p>
 
 </form>
 <script>
 var operator=0;
 var wrong=0;
 var correct=0;
-var numberofquestions=0;
 var firstnumber=0;
 var secondnumber=0;
 var correctresult=0;
 var result=0;
 var percentage=0;
-function myInput() {
-    	firstnumber = document.getElementById('x').value
-        secondnumber = document.getElementById('y').value
-        result = document.getElementById('z').value
-}
-function button1() {
+var total=0;
+firstnumber = parseFloat(document.getElementById("x").value);
+secondnumber = parseFloat(document.getElementById("y").value);
+
+function add() {
+        firstnumber = parseFloat(document.getElementById("x").value);
+        secondnumber = parseFloat(document.getElementById("y").value);
         correctresult = firstnumber + secondnumber;
 
 }
-function button2() {
+function subtract() {
+        firstnumber = parseFloat(document.getElementById("x").value);
+        secondnumber = parseFloat(document.getElementById("y").value);
         correctresult = firstnumber - secondnumber;
 
 }
 function button3() {
+        firstnumber = parseFloat(document.getElementById("x").value);
+        secondnumber = parseFloat(document.getElementById("y").value);
         correctresult = firstnumber * secondnumber;
 
 }
 function button4() {
+        firstnumber = parseFloat(document.getElementById("x").value);
+        secondnumber = parseFloat(document.getElementById("y").value);
         correctresult = firstnumber / secondnumber;
 
 }
-function buttonmain() {
-        return = correctresult
+function validate() {
+        result = parseFloat(document.forms["question"]["answer"].value);
+        if (result == correctresult) {
+            alert("Correct!");
+            correct = correct + 1;
+            wrong = wrong; }
+        else {
+            alert("Incorrect!");
+            wrong = wrong + 1;
+            total = total + 1
+            percentage = (correct * 100) / total;
+        }
+        
+        document.getElementById("correctresult") = correctresult;
+        document.getElementById("wrong") = wrong;
+        document.getElementById("correct") = correct;
+        document.getElementById("per") = percentage;
 
 }
 
