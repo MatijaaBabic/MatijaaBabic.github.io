@@ -5,65 +5,85 @@
 <body>
 <form name ="question">
 First number:
-<p><input type="text", id ="x" name="firstnumber"></p>
+<p><input type="text", id ="x" value = " "></p>
 Second number:
-<p><input type="text", id = "y" name="secondnumber"></p>
-<button type="button", onclick="add()">+</button>
-<p><button type="button", onclick="subtract()">-</button></p>
-<p><button type="button", onclick="button3()">*</button></p>
-<p><button type="button", onclick="button4()">/</button></p> <!--all placeholders for now, will change once functions are written-->
-Answer:<p><input type='text', name="answer"></p>
+<p><input type="text", id = "y" value = " "></p>
+<p><input type="button", value = "+" onclick="add()"><input type="button", value = "**" onclick="exponent()"></p>
+<p><button type="button", onclick="subtract()">-</button><input type="button", value = "sqrt" onclick="sqrt()">*</p>
+<p><button type="button", onclick="multiply()">*</button><input type="button", value = "mod" onclick="mod()"></p>
+<p><button type="button", onclick="divide()">/</button><input type="button", value = "//" onclick="div()"></p> <!--all placeholders for now, will change once functions are written-->
+Answer:<p><input type='text', id="z" value = " "></p>
 Correct answer:
-<p id="box1"><input type="text", id="correctresult" name= correctresult></p> 
+<p id="box1"><input type="text", id="correctresult" name= correctresult value=""></p> 
 <button type="button" onclick="validate()">Correct answer</button> <!--placeholder for now, will change later-->
-<p>Number of wrong answers: <input type= "text" , id = wrong name="wrong"></p>
-<p>Number of correct answers: <input type="text", id = correct name="correct"></p>
-<p>Percentage correct: <input type="text", id = per name="percentage"></p>
-
+<p>Number of wrong answers: <input type= "text" , id = wrong name="wrong"value=""></p>
+<p>Number of correct answers: <input type="text", id = correct name="correct"value=""></p>
+<p>Percentage correct: <input type="text", id = per name="percentage" value="">%</p>
+*For square root, input just the needed number as the first number.
 </form>
 <script>
 var operator=0;
 var wrong=0;
 var correct=0;
-var firstnumber=0;
-var secondnumber=0;
 var correctresult=0;
-var result=0;
 var percentage=0;
 var total=0;
-firstnumber = parseFloat(document.getElementById("x").value);
-secondnumber = parseFloat(document.getElementById("y").value);
+
+
+function exponent() {
+        var x = parseFloat(document.getElementById("x").value);
+        var y = parseFloat(document.getElementById("y").value);
+        correctresult = x ** y;
+}
+function sqrt() {
+        var x = parseFloat(document.getElementById("x").value);
+        var sqRoot = Math.sqrt(x);
+        correctresult = sqRoot;
+}
+function mod() {
+        var x = parseFloat(document.getElementById("x").value);
+        var y = parseFloat(document.getElementById("y").value);
+        correctresult = x % y;
+}
+function div() {
+        var x = parseFloat(document.getElementById("x").value);
+        var y = parseFloat(document.getElementById("y").value);
+        var reminder = x % y;
+        correctresult = (x - reminder) / y;
+}
 
 function add() {
-        firstnumber = parseFloat(document.getElementById("x").value);
-        secondnumber = parseFloat(document.getElementById("y").value);
-        correctresult = firstnumber + secondnumber;
-
+       var x = parseFloat(document.getElementById("x").value);
+        var y = parseFloat(document.getElementById("y").value);
+        correctresult = x + y;
+        
 }
 function subtract() {
-        firstnumber = parseFloat(document.getElementById("x").value);
-        secondnumber = parseFloat(document.getElementById("y").value);
-        correctresult = firstnumber - secondnumber;
+        z = parseFloat(document.getElementById("x").value);
+        w = parseFloat(document.getElementById("y").value);
+        correctresult = z - w;
 
 }
-function button3() {
-        firstnumber = parseFloat(document.getElementById("x").value);
-        secondnumber = parseFloat(document.getElementById("y").value);
-        correctresult = firstnumber * secondnumber;
+function multiply() {
+        t = parseFloat(document.getElementById("x").value);
+        s = parseFloat(document.getElementById("y").value);
+        correctresult = t * s;
 
 }
-function button4() {
-        firstnumber = parseFloat(document.getElementById("x").value);
-        secondnumber = parseFloat(document.getElementById("y").value);
-        correctresult = firstnumber / secondnumber;
+function divide() {
+        o = parseFloat(document.getElementById("x").value);
+        p = parseFloat(document.getElementById("y").value);
+        correctresult = o / p;
 
 }
 function validate() {
-        result = parseFloat(document.forms["question"]["answer"].value);
+        result = parseFloat(document.getElementById("z").value);
         if (result == correctresult) {
             alert("Correct!");
             correct = correct + 1;
-            wrong = wrong; }
+            wrong = wrong;
+            total = total + 1
+            percentage = (correct * 100) / total; }
         else {
             alert("Incorrect!");
             wrong = wrong + 1;
@@ -71,10 +91,10 @@ function validate() {
             percentage = (correct * 100) / total;
         }
         
-        document.getElementById("correctresult") = correctresult;
-        document.getElementById("wrong") = wrong;
-        document.getElementById("correct") = correct;
-        document.getElementById("per") = percentage;
+        document.getElementById("correctresult").value = String(correctresult);
+        document.getElementById("wrong").value = String(wrong);
+        document.getElementById("correct").value = String(correct);
+        document.getElementById("per").value = String(percentage);
 
 }
 
