@@ -2,16 +2,24 @@
 <html>
 <head>
 <title>Beginner's website projects</title>
-
+<link href="styles1.css" rel="stylesheet" type="text/css">
 <body>
 <!--Just a small project to make the index.html site nicer :D-->
 <h1> HTML, CSS and JavaScript Projects</h1>
 <h3><i> By Matija Babić</i></h3>
 <div style="display: flex;">
-    <button class = button-15 type="button", onclick="eiffel()">The Eiffel Tower</button> 
-    <button class = button-15 type="button", onclick="tullyfish()">Tully Fish/Monster</button>
-    <button class = button-15 type="button", onclick="diceroll()">Dice roll</button>
-    <div class = button-15><button type="button", onclick="quizzcalculator()">Quizz calculator</button> </div>
+    <div class = column id="column1"><button class = button-15 type="button", onclick="eiffel()">The Eiffel Tower</button> 
+    My first ever programming project outside of Arduino or Scratch, this very simple site uses only basic HTML and CSS code. Even with that know, it still took me much to finish it, even once working untill 3AM. Also a great example of: ,,It's not a bug, it's a feature".
+    </div>
+    <div class = column id="column2"><button class = button-15 type="button", onclick="tullyfish()">Tully Fish/Monster</button>
+    First project that incorporated the use of buttons and interactivity of the user, as well as JavaScript. Also the first work I started adding on the features other than those defined by the task. This is the task I probably spent the most time on as well.
+    </div>
+    <div class = column id = "column3"><button class = button-15 type="button", onclick="diceroll()">Dice roll</button>
+    Project I spent the least time on, but I still have some ideas to spice it up, like adding the animation for rolling the dice or a sound playing whenever the player gets a 6.
+    </div>
+    <div class = column id = "column4"><button class = button-15 type="button", onclick="quizzcalculator()">Quizz calculator</button> 
+    One of the more complex projects, especially due to my low experience with the programming language. Also a work in progress, I am planning to make it look like an actual calculator.
+    </div>
    </div>
 
 <script>
@@ -76,6 +84,44 @@ function quizzcalculator() {
   box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
   outline: none;
 }
+.column{
+  float: left;
+  width: 25%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#column1 {
+  text-align: center;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: lightcoral;
+  color: white;
+} 
+#column2 {
+  text-align: center;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: lime;
+  color: black;
+} 
+#column3 {
+  text-align: center;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: gold;
+  color: black;
+} 
+#column4 {
+  text-align: center;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: cyan;
+  color: black;
+} 
 </style>
 </body>
 </head>
