@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Times Table</title>
+    <link href="tullystyles.css" rel="stylesheet" type="text/css" >
+</head>
+<body>
+    <h1>Times Tables:</h1>
+    <h2>Pick your times table:</h2>
+    <form name="tableChoice" onsubmit="return table()">
+        Times table for: <input type="text" id="choice">
+        <input type="submit">
+    </form>
+    <p id="table"></p>
+<script>
+    function table(){
+        var choice = parseInt(document.getElementById("choice").value)
+        var table = document.getElementById("table")
+        table.innerHTML = ""
+        if(choice >= 1 && choice <= 10){
+            for(var i = 1; i<=10; i++){
+                table.innerHTML += choice + " x " + i + " = " + (choice * i) + "<br>"
+            }
+            return false
+        }else{
+            alert("Invalid Choice")
+            return false
+        }
+    }
+</script>
+    
+</body>
+</html>
